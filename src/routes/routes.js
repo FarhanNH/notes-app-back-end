@@ -1,4 +1,11 @@
-const { addNoteHandler, getAllNotesHandler, getNoteByIdHandler, editNoteByIdHandler, deleteNoteByIdHandler } = require('../controllers/handler');
+const {
+  addNoteHandler,
+  getAllNotesHandler,
+  getNoteByIdHandler,
+  editNoteByIdHandler,
+  deleteNoteByIdHandler,
+} = require('../controllers/handler');
+
 const userController = require('../controllers/userController');
 
 const routes = [
@@ -28,9 +35,19 @@ const routes = [
     handler: deleteNoteByIdHandler,
   },
   {
+    method: 'POST',
+    path: '/users',
+    handler: userController.addUser,
+  },
+  {
     method: 'GET',
     path: '/users',
     handler: userController.getUserList,
+  },
+  {
+    method: 'GET',
+    path: '/users/{id}',
+    handler: userController.getUserById,
   },
 ];
 
