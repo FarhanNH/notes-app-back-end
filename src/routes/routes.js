@@ -6,7 +6,7 @@ const {
   deleteNoteByIdHandler,
 } = require('../controllers/handler');
 
-const userController = require('../controllers/userController');
+const userRoutes = require('./userRoutes');
 
 const routes = [
   {
@@ -34,21 +34,8 @@ const routes = [
     path: '/notes/{id}',
     handler: deleteNoteByIdHandler,
   },
-  {
-    method: 'POST',
-    path: '/users',
-    handler: userController.addUser,
-  },
-  {
-    method: 'GET',
-    path: '/users',
-    handler: userController.getUserList,
-  },
-  {
-    method: 'GET',
-    path: '/users/{id}',
-    handler: userController.getUserById,
-  },
 ];
+
+routes.push(...userRoutes);
 
 module.exports = routes;
