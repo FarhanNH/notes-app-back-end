@@ -1,4 +1,6 @@
 node_modules
+notes-api-web-server.pem
 dist
 .env
 .prod.env
+src/api/uploads/file
